@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sinchana Bhat P — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Animated background grid -->
+  <div class="bg-grid"></div>
+  <div class="bg-glow"></div>
+
+  <!-- Floating particles -->
+  <div class="particles" aria-hidden="true">
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+  </div>
+
+  <!-- ── NAVIGATION ── -->
+  <header class="nav-wrapper" role="banner">
+    <nav class="nav">
+      <a href="#" class="nav-logo" aria-label="Home">
+        <span class="logo-bracket">[</span>SBP<span class="logo-bracket">]</span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#contact" class="nav-link nav-link--cta">Contact</a></li>
+      </ul>
+
+      <button class="nav-mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ── HERO ── -->
+  <main>
+    <section class="hero" id="about" aria-label="Hero section">
+
+      <!-- Left column -->
+      <div class="hero-content">
+
+        <div class="hero-eyebrow">
+          <span class="eyebrow-dot"></span>
+          <span class="eyebrow-text">CSE Student · Currently Learning</span>
+        </div>
+
+        <h1 class="hero-name">
+          <span class="name-line name-line--first">Sinchana</span>
+          <span class="name-line name-line--last">Bhat <span class="name-accent">P</span></span>
+        </h1>
+
+        <div class="hero-title-bar">
+          <span class="title-label">// role</span>
+          <span class="title-value">CS Student &amp; Aspiring Developer <span class="cursor-blink">_</span></span>
+        </div>
+
+        <p class="hero-intro">
+          B.Tech Computer Science Engineering student at <strong>REVA University</strong>
+          (CSE &amp; IT), learning to write programs that solve real problems.
+          Exploring Data Science and Python, building a foundation in algorithms,
+          and excited to grow through projects, certifications, and curiosity.
+        </p>
+
+        <div class="hero-meta">
+          <div class="meta-chip">
+            <span class="chip-icon">◈</span>
+            <span>REVA University</span>
+          </div>
+          <div class="meta-chip">
+            <span class="chip-icon">◈</span>
+            <span>B.Tech CSE &amp; IT</span>
+          </div>
+          <div class="meta-chip">
+            <span class="chip-icon">◈</span>
+            <span>Data Science Track</span>
+          </div>
+        </div>
+
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn--primary">
+            <span class="btn-inner">
+              <span class="btn-icon">⟨/⟩</span>
+              View Projects
+            </span>
+            <span class="btn-glow"></span>
+          </a>
+          <a href="#contact" class="btn btn--ghost">
+            <span class="btn-inner">
+              <span class="btn-icon">✉</span>
+              Get in Touch
+            </span>
+          </a>
+        </div>
+
+        <!-- Terminal line -->
+        <div class="hero-terminal">
+          <span class="terminal-prompt">~/sinchana$</span>
+          <span class="terminal-cmd">python learn.py --focus data_science</span>
+        </div>
+      </div>
+
+      <!-- Right column: glass card -->
+      <div class="hero-card-col" aria-hidden="true">
+        <div class="glass-card">
+          <div class="card-header">
+            <span class="card-dot card-dot--red"></span>
+            <span class="card-dot card-dot--yellow"></span>
+            <span class="card-dot card-dot--green"></span>
+            <span class="card-filename">sinchana.profile.py</span>
+          </div>
+          <div class="card-body">
+<pre class="card-code"><span class="code-v">student</span> <span class="code-op">=</span> {
+  <span class="code-prop">"name"</span><span class="code-op">:</span>     <span class="code-str">"Sinchana Bhat P"</span><span class="code-op">,</span>
+  <span class="code-prop">"uni"</span><span class="code-op">:</span>      <span class="code-str">"REVA University"</span><span class="code-op">,</span>
+  <span class="code-prop">"degree"</span><span class="code-op">:</span>  <span class="code-str">"B.Tech CSE"</span><span class="code-op">,</span>
+  <span class="code-prop">"learning"</span><span class="code-op">:</span> [
+    <span class="code-str">"C Programming"</span><span class="code-op">,</span>
+    <span class="code-str">"Python"</span><span class="code-op">,</span>
+    <span class="code-str">"Data Science"</span>
+  ]<span class="code-op">,</span>
+  <span class="code-prop">"status"</span><span class="code-op">:</span>  <span class="code-str">"actively_learning"</span> <span class="code-comment"># ✓</span>
+}</pre>
+
+            <div class="card-stats">
+              <div class="stat">
+                <span class="stat-num">3</span>
+                <span class="stat-label">Projects</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat">
+                <span class="stat-num">4</span>
+                <span class="stat-label">Certifications</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat">
+                <span class="stat-num">∞</span>
+                <span class="stat-label">Curiosity</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Orbiting ring -->
+        <div class="orbit-ring"></div>
+        <div class="orbit-dot"></div>
+      </div>
+
+    </section>
+
+    <!-- ── PROJECTS ── -->
+    <section class="projects" id="projects" aria-label="Projects section">
+
+      <div class="projects-inner">
+
+        <div class="section-eyebrow">
+          <span class="eyebrow-dot"></span>
+          <span class="eyebrow-text">// my work</span>
+        </div>
+        <h2 class="section-title">Projects</h2>
+        <p class="section-sub">Things I've built while learning — real code, real datasets, real output.</p>
+
+        <div class="projects-grid">
+
+          <!-- ── FEATURED: Netflix Data Analysis ── -->
+          <article class="proj-card proj-card--featured" aria-label="Featured project">
+            <div class="proj-card-inner">
+
+              <div class="proj-header">
+                <div class="proj-badges">
+                  <span class="proj-badge proj-badge--featured">★ Featured</span>
+                  <span class="proj-badge">Data Science</span>
+                </div>
+                <div class="proj-num">01</div>
+              </div>
+
+              <div class="proj-viz" aria-hidden="true">
+                <div class="viz-bar-group">
+                  <div class="viz-label">Drama</div>
+                  <div class="viz-bar"><div class="viz-fill" style="--w:88%"></div></div>
+                </div>
+                <div class="viz-bar-group">
+                  <div class="viz-label">Comedy</div>
+                  <div class="viz-bar"><div class="viz-fill" style="--w:72%"></div></div>
+                </div>
+                <div class="viz-bar-group">
+                  <div class="viz-label">Action</div>
+                  <div class="viz-bar"><div class="viz-fill" style="--w:55%"></div></div>
+                </div>
+                <div class="viz-bar-group">
+                  <div class="viz-label">Thriller</div>
+                  <div class="viz-bar"><div class="viz-fill" style="--w:41%"></div></div>
+                </div>
+                <div class="viz-caption">Genre distribution · Netflix dataset (Kaggle)</div>
+              </div>
+
+              <h3 class="proj-title">Netflix Data Analysis</h3>
+              <p class="proj-desc">
+                Analyzed a Netflix dataset from Kaggle using Python. Processed data with
+                Pandas and NumPy, produced visualizations with Matplotlib and Seaborn, and
+                applied <code>train_test_split</code> as part of learning the Data Science
+                workflow. Explored trends in genres, release years, countries, and content
+                distribution.
+              </p>
+
+              <ul class="proj-tech" aria-label="Technologies used">
+                <li class="tech-tag">Python</li>
+                <li class="tech-tag">Pandas</li>
+                <li class="tech-tag">NumPy</li>
+                <li class="tech-tag">Matplotlib</li>
+                <li class="tech-tag">Seaborn</li>
+              </ul>
+
+            </div>
+            <div class="proj-card-glow" aria-hidden="true"></div>
+          </article>
+
+          <!-- ── SMALL CARDS ── -->
+          <div class="proj-col-small">
+
+            <!-- Movie Sorting Program -->
+            <article class="proj-card proj-card--sm" aria-label="Movie Sorting Program">
+              <div class="proj-card-inner">
+
+                <div class="proj-header">
+                  <span class="proj-badge">C Programming</span>
+                  <div class="proj-num">02</div>
+                </div>
+
+                <div class="proj-icon-wrap" aria-hidden="true">
+                  <svg class="proj-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="6" y="10" width="36" height="5" rx="2" fill="currentColor" opacity="0.9"/>
+                    <rect x="6" y="21" width="28" height="5" rx="2" fill="currentColor" opacity="0.65"/>
+                    <rect x="6" y="32" width="20" height="5" rx="2" fill="currentColor" opacity="0.4"/>
+                    <polyline points="40,24 44,20 44,36 40,32" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+                  </svg>
+                </div>
+
+                <h3 class="proj-title">Movie Sorting Program</h3>
+                <p class="proj-desc">
+                  A C project that organises movie records using sorting techniques —
+                  an early exercise in data ordering and structured thinking.
+                </p>
+
+                <ul class="proj-tech" aria-label="Technologies used">
+                  <li class="tech-tag">C Programming</li>
+                </ul>
+
+              </div>
+            </article>
+
+            <!-- Movie Search Program -->
+            <article class="proj-card proj-card--sm" aria-label="Movie Search Program">
+              <div class="proj-card-inner">
+
+                <div class="proj-header">
+                  <span class="proj-badge">C Programming</span>
+                  <div class="proj-num">03</div>
+                </div>
+
+                <div class="proj-icon-wrap" aria-hidden="true">
+                  <svg class="proj-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="21" cy="21" r="13" stroke="currentColor" stroke-width="2.5" opacity="0.9"/>
+                    <line x1="30" y1="30" x2="42" y2="42" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+                    <line x1="16" y1="21" x2="26" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+                    <line x1="21" y1="16" x2="21" y2="26" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+                  </svg>
+                </div>
+
+                <h3 class="proj-title">Movie Search Program</h3>
+                <p class="proj-desc">
+                  A C program to search movie records using basic searching techniques.
+                  Reinforced understanding of arrays, conditions, loops, and efficient
+                  data retrieval.
+                </p>
+
+                <ul class="proj-tech" aria-label="Technologies used">
+                  <li class="tech-tag">C Programming</li>
+                </ul>
+
+              </div>
+            </article>
+
+            <!-- ASCII Drawing Mini Project -->
+            <article class="proj-card proj-card--sm" aria-label="ASCII Drawing Mini Project">
+              <div class="proj-card-inner">
+
+                <div class="proj-header">
+                  <span class="proj-badge">C Programming</span>
+                  <div class="proj-num">04</div>
+                </div>
+
+                <div class="proj-ascii-preview" aria-hidden="true">
+<pre>  *
+ ***
+*****
+ ***
+  *</pre>
+                </div>
+
+                <h3 class="proj-title">ASCII Drawing Mini Project</h3>
+                <p class="proj-desc">
+                  Created shapes and patterns using <code>*</code>, <code>_</code>, and
+                  <code>|</code> in the console to explore basic graphics and text-formatting
+                  concepts.
+                </p>
+
+                <ul class="proj-tech" aria-label="Technologies used">
+                  <li class="tech-tag">C Programming</li>
+                </ul>
+
+              </div>
+            </article>
+
+          </div><!-- /proj-col-small -->
+
+        </div><!-- /projects-grid -->
+      </div><!-- /projects-inner -->
+    </section>
+
+
+    <!-- ── SKILLS ── -->
+    <section class="skills-section" id="skills" aria-label="Skills section">
+      <div class="section-inner">
+
+        <div class="section-eyebrow">
+          <span class="eyebrow-dot"></span>
+          <span class="eyebrow-text">// toolkit</span>
+        </div>
+        <h2 class="section-title">Skills</h2>
+        <p class="section-sub">Languages and libraries I'm actively learning and applying.</p>
+
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none"><rect x="4" y="8" width="32" height="24" rx="3" stroke="currentColor" stroke-width="2"/><path d="M13 20l4 4 10-10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/><text x="20" y="22" text-anchor="middle" font-family="monospace" font-size="11" fill="currentColor" opacity="0.9">C</text></svg>
+            </div>
+            <span class="skill-name">C Programming</span>
+            <div class="skill-bar"><div class="skill-fill" style="--sw:70%"></div></div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none"><rect x="4" y="8" width="32" height="24" rx="3" stroke="currentColor" stroke-width="2"/><text x="20" y="24" text-anchor="middle" font-family="monospace" font-size="10" fill="currentColor" opacity="0.9">py</text></svg>
+            </div>
+            <span class="skill-name">Python</span>
+            <div class="skill-bar"><div class="skill-fill" style="--sw:65%"></div></div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="2"/><path d="M12 26l4-8 4 5 3-4 5 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/></svg>
+            </div>
+            <span class="skill-name">Data Science</span>
+            <div class="skill-bar"><div class="skill-fill" style="--sw:55%"></div></div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none"><rect x="5" y="12" width="30" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M10 20h20M20 14v12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity="0.7"/></svg>
+            </div>
+            <span class="skill-name">NumPy</span>
+            <div class="skill-bar"><div class="skill-fill" style="--sw:60%"></div></div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none"><rect x="5" y="8" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="2" opacity="0.9"/><rect x="23" y="8" width="12" height="12" rx="1.5" stroke="currentColor" stroke-width="2" opacity="0.6"/><rect x="5" y="24" width="12" height="8" rx="1.5" stroke="currentColor" stroke-width="2" opacity="0.6"/><rect x="23" y="24" width="12" height="8" rx="1.5" stroke="currentColor" stroke-width="2" opacity="0.4"/></svg>
+            </div>
+            <span class="skill-name">Pandas</span>
+            <div class="skill-bar"><div class="skill-fill" style="--sw:60%"></div></div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none"><polyline points="6,30 14,18 20,24 28,12 34,20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/></svg>
+            </div>
+            <span class="skill-name">Matplotlib</span>
+            <div class="skill-bar"><div class="skill-fill" style="--sw:55%"></div></div>
+          </div>
+
+          <div class="skill-card">
+            <div class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none"><rect x="5" y="28" width="6" height="6" rx="1" fill="currentColor" opacity="0.4"/><rect x="14" y="20" width="6" height="14" rx="1" fill="currentColor" opacity="0.6"/><rect x="23" y="14" width="6" height="20" rx="1" fill="currentColor" opacity="0.8"/><rect x="32" y="8" width="6" height="26" rx="1" fill="currentColor" opacity="0.95"/></svg>
+            </div>
+            <span class="skill-name">Seaborn</span>
+            <div class="skill-bar"><div class="skill-fill" style="--sw:50%"></div></div>
+          </div>
+
+          <div class="skill-card skill-card--learning">
+            <div class="skill-icon" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="14" r="6" stroke="currentColor" stroke-width="2"/><path d="M20 20v8m-6 4h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="29" cy="29" r="5" fill="var(--bg-surface)" stroke="currentColor" stroke-width="1.5"/><path d="M27 29h4M29 27v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/></svg>
+            </div>
+            <span class="skill-name">Git &amp; GitHub</span>
+            <span class="skill-learning-badge">Learning</span>
+            <div class="skill-bar"><div class="skill-fill" style="--sw:30%"></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CERTIFICATIONS ── -->
+    <section class="certs-section" id="certs" aria-label="Certifications section">
+      <div class="section-inner">
+
+        <div class="section-eyebrow">
+          <span class="eyebrow-dot"></span>
+          <span class="eyebrow-text">// credentials</span>
+        </div>
+        <h2 class="section-title">Certifications</h2>
+        <p class="section-sub">Verified courses completed through IBM on Cognitive Class.</p>
+
+        <div class="certs-grid">
+
+          <div class="cert-card cert-card--primary">
+            <div class="cert-issuer-row">
+              <span class="cert-issuer">IBM</span>
+              <span class="cert-level">Level 2</span>
+            </div>
+            <div class="cert-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/><path d="M16 24l6 6 10-12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="cert-title">Applied Data Science with Python</h3>
+            <p class="cert-meta">IBM · Cognitive Class</p>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-issuer-row">
+              <span class="cert-issuer">IBM</span>
+            </div>
+            <div class="cert-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none"><rect x="8" y="8" width="32" height="32" rx="4" stroke="currentColor" stroke-width="2"/><path d="M16 24h16M16 17h16M16 31h10" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.7"/></svg>
+            </div>
+            <h3 class="cert-title">Python for Data Science</h3>
+            <p class="cert-meta">IBM · Cognitive Class</p>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-issuer-row">
+              <span class="cert-issuer">IBM</span>
+            </div>
+            <div class="cert-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none"><polyline points="8,36 18,22 26,28 36,14 40,20" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="cert-title">Data Visualization Using Python</h3>
+            <p class="cert-meta">IBM · Cognitive Class</p>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-issuer-row">
+              <span class="cert-issuer">IBM</span>
+            </div>
+            <div class="cert-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none"><rect x="8" y="28" width="7" height="12" rx="1.5" fill="currentColor" opacity="0.4"/><rect x="20" y="20" width="7" height="20" rx="1.5" fill="currentColor" opacity="0.65"/><rect x="32" y="10" width="7" height="30" rx="1.5" fill="currentColor" opacity="0.9"/></svg>
+            </div>
+            <h3 class="cert-title">Data Analysis Using Python</h3>
+            <p class="cert-meta">IBM · Cognitive Class</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTACT ── -->
+    <section class="contact-section" id="contact" aria-label="Contact section">
+      <div class="section-inner">
+
+        <div class="section-eyebrow">
+          <span class="eyebrow-dot"></span>
+          <span class="eyebrow-text">// reach out</span>
+        </div>
+        <h2 class="section-title">Contact</h2>
+        <p class="section-sub">Open to internships, collaborations, and learning opportunities.</p>
+
+        <div class="contact-wrapper">
+
+          <div class="contact-card glass-card">
+            <div class="contact-info">
+              <div class="contact-name-block">
+                <p class="contact-name">Sinchana Bhat P</p>
+                <p class="contact-uni">B.Tech CSE &amp; IT · REVA University</p>
+              </div>
+
+              <ul class="contact-links" role="list">
+                <li>
+                  <a href="https://www.linkedin.com/in/sinchana-bhat-p-0b26b4230" class="contact-link" aria-label="LinkedIn profile" target="_blank" rel="noopener noreferrer">
+                    <span class="contact-link-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="4" stroke="currentColor" stroke-width="1.8"/><path d="M7 10v7M7 7v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M11 17v-4a3 3 0 016 0v4M11 10v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                    </span>
+                    <span class="contact-link-text">
+                      <span class="contact-link-label">LinkedIn</span>
+                      <span class="contact-link-val">linkedin.com/in/sinchana-bhat-p-0b26b4230</span>
+                    </span>
+                    <span class="contact-link-arrow">→</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/jonithin235" class="contact-link" aria-label="GitHub profile" target="_blank" rel="noopener noreferrer">
+                    <span class="contact-link-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                    </span>
+                    <span class="contact-link-text">
+                      <span class="contact-link-label">GitHub</span>
+                      <span class="contact-link-val">github.com/jonithin235</span>
+                    </span>
+                    <span class="contact-link-arrow">→</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:sinch73s@gmail.com" class="contact-link" aria-label="Email">
+                    <span class="contact-link-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M2 8l10 7 10-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                    </span>
+                    <span class="contact-link-text">
+                      <span class="contact-link-label">Email</span>
+                      <span class="contact-link-val">sinch73s@gmail.com</span>
+                    </span>
+                    <span class="contact-link-arrow">→</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="contact-terminal" aria-hidden="true">
+              <div class="ct-line"><span class="ct-prompt">$</span> <span class="ct-cmd">ping sinchana --msg "hello"</span></div>
+              <div class="ct-line ct-response">✓ <span class="ct-ok">message delivered</span></div>
+              <div class="ct-line"><span class="ct-prompt">$</span> <span class="cursor-blink">_</span></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <footer class="site-footer">
+      <div class="section-inner">
+        <div class="footer-inner">
+          <span class="footer-logo"><span class="logo-bracket">[</span>SBP<span class="logo-bracket">]</span></span>
+          <span class="footer-copy">Sinchana Bhat P · REVA University · B.Tech CSE &amp; IT</span>
+          <span class="footer-mono">// built with curiosity</span>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    const toggle = document.querySelector('.nav-mobile-toggle');
+    const links  = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    links.querySelectorAll('.nav-link').forEach(l =>
+      l.addEventListener('click', () => {
+        links.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', false);
+      })
+    );
+  </script>
+</body>
+</html>
