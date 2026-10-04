@@ -9,10 +9,10 @@
   --neon:        #2ee8b8;
   --neon-dim:    rgba(46, 232, 184, 0.18);
   --neon-glow:   rgba(46, 232, 184, 0.45);
-  --accent-sec:  #5b6af7;
+  --accent-sec:  #727ff8; /* raised from #5b6af7: >= 4.5:1 (WCAG AA) on tag/badge backgrounds */
   --text-hi:     #e8edf5;
   --text-mid:    #8a94a8;
-  --text-lo:     #49536a;
+  --text-lo:     #828ca1; /* raised from #49536a: >= 4.5:1 (WCAG AA) on every surface it is used on */
   --border:      rgba(46, 232, 184, 0.14);
   --border-hi:   rgba(46, 232, 184, 0.35);
 
@@ -448,6 +448,16 @@ ul { list-style: none; }
   align-items: center;
   justify-content: center;
   animation: fade-up 0.8s 0.45s ease both;
+  --orbit: 520px; /* orbit diameter; capped to the column width below */
+}
+
+/* Keep the decorative orbit inside its column (cqw = column width), so it
+   can never extend past the viewport on narrower desktop widths. */
+@supports (width: 1cqw) {
+  .hero-card-col {
+    container-type: inline-size;
+    --orbit: min(520px, 100cqw);
+  }
 }
 
 /* Glassmorphism card */
@@ -523,7 +533,7 @@ ul { list-style: none; }
 .code-op   { color: var(--text-lo); }
 .code-prop { color: #e06c75; }
 .code-str  { color: var(--neon); }
-.code-comment { color: #4a5568; font-style: italic; }
+.code-comment { color: var(--text-lo); font-style: italic; }
 
 /* Stats row */
 .card-stats {
@@ -570,15 +580,19 @@ ul { list-style: none; }
 }
 
 /* Orbiting decoration */
+/* Centred with negative margins, not transform: the spin animation replaces
+   `transform`, which previously dropped the translate(-50%, -50%) centring and
+   pushed the ring out past the right edge of the page. */
 .orbit-ring {
   position: absolute;
-  width: 520px;
-  height: 520px;
+  width: var(--orbit);
+  height: var(--orbit);
   border-radius: 50%;
   border: 1px dashed rgba(46,232,184,0.12);
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  margin-top: calc(var(--orbit) / -2);
+  margin-left: calc(var(--orbit) / -2);
   animation: spin 30s linear infinite;
   z-index: 0;
   pointer-events: none;
@@ -593,10 +607,10 @@ ul { list-style: none; }
   box-shadow: 0 0 12px var(--neon);
   top: 50%;
   left: 50%;
-  margin-top: -260px;
+  margin-top: calc(var(--orbit) / -2);
   margin-left: -5px;
   animation: spin 30s linear infinite;
-  transform-origin: 5px 260px;
+  transform-origin: 5px calc(var(--orbit) / 2);
   z-index: 1;
   pointer-events: none;
 }
@@ -720,6 +734,10 @@ ul { list-style: none; }
   gap: 24px;
   align-items: start;
 }
+
+/* Full-width project card (sits on its own row below the grid) */
+.proj-card--wide { grid-column: 1 / -1; }
+.proj-card--wide .proj-desc { max-width: 720px; }
 
 .proj-col-small {
   display: flex;
@@ -877,6 +895,26 @@ ul { list-style: none; }
   to   { width: var(--w); }
 }
 
+/* Workflow steps (replaces the old hard-coded percentage bars) */
+.viz-steps {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.viz-step {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+.viz-step-num   { color: var(--neon); flex-shrink: 0; }
+.viz-step-label { color: var(--text-hi); }
+.viz-step-tools { color: var(--text-lo); margin-left: auto; text-align: right; }
+
 .viz-caption {
   font-family: var(--font-mono);
   font-size: 0.6rem;
@@ -985,6 +1023,15 @@ ul { list-style: none; }
   .proj-card-inner { padding: 22px 18px; }
 }
 
+/* Desktop: left column = Netflix + Regen-Verifier, right column = small cards.
+   Placement only; the HTML order (and mobile order) is unchanged. */
+@media (min-width: 901px) {
+  .projects-grid { grid-template-rows: auto 1fr; }
+  .proj-card--featured { grid-column: 1; grid-row: 1; }
+  .proj-col-small      { grid-column: 2; grid-row: 1 / span 2; }
+  .proj-card--wide     { grid-column: 1; grid-row: 2; }
+}
+
 /* ═══════════════════════════════════════════════
    SHARED SECTION WRAPPER
 ═══════════════════════════════════════════════ */
@@ -1065,22 +1112,24 @@ ul { list-style: none; }
   margin-top: -4px;
 }
 
-/* Skill progress bar */
-.skill-bar {
-  width: 100%;
-  height: 3px;
-  background: rgba(255,255,255,0.05);
+/* Skill status chip (project-based skills) + note */
+.skill-status {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--neon);
+  background: var(--neon-dim);
+  border: 1px solid var(--border-hi);
   border-radius: 100px;
-  overflow: hidden;
-  margin-top: auto;
+  padding: 2px 9px;
+  margin-top: -4px;
 }
 
-.skill-fill {
-  height: 100%;
-  width: var(--sw);
-  background: linear-gradient(90deg, var(--neon), rgba(46,232,184,0.4));
-  border-radius: 100px;
-  animation: bar-grow 1s cubic-bezier(0.22,1,0.36,1) both;
+.skill-note {
+  font-size: 0.75rem;
+  color: var(--text-mid);
+  line-height: 1.5;
 }
 
 @media (max-width: 900px) {
@@ -1091,6 +1140,65 @@ ul { list-style: none; }
 @media (max-width: 480px) {
   .skills-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
   .section-inner { padding: 0 20px; }
+}
+
+/* ═══════════════════════════════════════════════
+   PRACTICE SECTION
+═══════════════════════════════════════════════ */
+.practice-section {
+  position: relative;
+  z-index: 1;
+  padding: 0 0 20px;
+  scroll-margin-top: calc(var(--nav-h) + 32px); /* same gap under the nav as the other sections */
+}
+
+.practice-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+/* Cards stretch to equal height; links sit at the bottom */
+.practice-grid .proj-card-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.proj-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 22px;
+}
+
+.proj-link {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: var(--neon);
+  border: 1px solid var(--border-hi);
+  border-radius: 4px;
+  padding: 6px 14px;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.proj-link:hover {
+  background: var(--neon-dim);
+  box-shadow: 0 0 14px var(--neon-glow);
+}
+.proj-link:focus-visible {
+  outline: 2px solid var(--neon);
+  outline-offset: 2px;
+}
+
+@media (max-width: 900px) {
+  .practice-section { padding: 0; }
+  .practice-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .practice-grid .proj-card-inner { padding: 22px 18px; }
 }
 
 /* ═══════════════════════════════════════════════
@@ -1192,7 +1300,9 @@ ul { list-style: none; }
 }
 
 @media (max-width: 900px) {
-  .certs-section { padding: 60px 0; }
+  /* Reduced padding here would leave the section label under the fixed nav on
+     #certs jumps; this puts it the same distance below the nav as other sections. */
+  .certs-section { padding: 60px 0; scroll-margin-top: 40px; }
   .certs-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
@@ -1385,7 +1495,6 @@ ul { list-style: none; }
   font-family: var(--font-mono);
   font-size: 0.72rem;
   color: var(--text-lo);
-  opacity: 0.5;
   letter-spacing: 0.04em;
 }
 
